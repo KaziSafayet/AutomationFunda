@@ -1,0 +1,10 @@
+https://automationfunda.com
+https://automationfunda.com/services/n8n-workflow-automation
+https://automationfunda.com/services/crm-automation-gohighlevel
+https://automationfunda.com/services/whatsapp-automation
+https://automationfunda.com/services/data-analytics-dashboards
+https://automationfunda.com/services/google-sheets-automation
+https://automationfunda.com/services/api-development
+https://automationfunda.com/blog
+https://automationfunda.com/templates
+https://automationfunda.com/about
