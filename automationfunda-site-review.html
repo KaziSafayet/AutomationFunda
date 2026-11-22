@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>AutomationFunda Review &amp; Outreach Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one reading column of white sheets on a cool ground, matching the 7 Oct growth plan. Tables scroll inside their own box. */
+:root{
+ --bg:#F4F6FA;--paper:#FFFFFF;--ink:#24302F;--muted:#5E6B72;--line:#E3E9F3;--navy:#0B4283;--soft:#EEF3FC;--amber:#FFB600;
+ --p1:#A4262C;--p1-bg:#FBE9EA;--p2:#8A5A00;--p2-bg:#FFF4D6;--p3:#5E6B72;--p3-bg:#F1F4F9;--good:#15663F;--good-bg:#E6F4EC;
+ --code:#F1F4F9;--shadow:0 4px 16px rgba(11,66,131,.06);
+ --display:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;--body:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#0E1520;--paper:#151E2B;--ink:#E3E8EF;--muted:#9AA7B5;--line:#263244;--navy:#8DB7F0;--soft:#1B2738;--amber:#E0A21A;
+ --p1:#F2A3A7;--p1-bg:#3A1D21;--p2:#F0C463;--p2-bg:#3A2E12;--p3:#A9B4C1;--p3-bg:#222C3A;--good:#8FD3AE;--good-bg:#16301F;--code:#101824;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{
+ --bg:#0E1520;--paper:#151E2B;--ink:#E3E8EF;--muted:#9AA7B5;--line:#263244;--navy:#8DB7F0;--soft:#1B2738;--amber:#E0A21A;
+ --p1:#F2A3A7;--p1-bg:#3A1D21;--p2:#F0C463;--p2-bg:#3A2E12;--p3:#A9B4C1;--p3-bg:#222C3A;--good:#8FD3AE;--good-bg:#16301F;--code:#101824;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:var(--navy)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--navy);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1000px;margin:0 auto;padding-block:0 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{padding-block:44px 24px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance}
+h1{font-size:clamp(28px,4vw,40px);line-height:1.15;color:var(--navy);margin:0 0 10px}
+.lede{font-size:19px;color:var(--muted);max-width:760px;margin:0}
+.meta{margin-top:14px;font-size:14px;color:var(--muted)}
+nav.toc{background:var(--paper);border-radius:14px;padding:16px 20px;margin:0 0 20px;box-shadow:var(--shadow);border:1px solid var(--line)}
+nav.toc b{display:block;margin-bottom:6px}
+nav.toc ol{margin:0;padding-left:20px;columns:2;column-gap:26px}
+nav.toc li{font-size:15px;break-inside:avoid;margin-bottom:2px}
+section{background:var(--paper);border-radius:16px;padding:26px 28px;margin:0 0 20px;box-shadow:var(--shadow);border:1px solid var(--line);min-width:0}
+h2{font-size:24px;color:var(--navy);margin:0 0 6px}
+h3{font-size:19px;margin:24px 0 6px}
+h4{font-size:16px;margin:16px 0 4px;color:var(--p2)}
+.sub{color:var(--muted);margin:0 0 14px}
+p{margin:8px 0}
+ul.tight,ol.tight{margin:6px 0;padding-left:22px}
+ul.tight li,ol.tight li{margin-bottom:6px}
+.verdict{display:grid;gap:10px;margin:6px 0 0;padding:0;list-style:none}
+.verdict li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:12px;background:var(--soft)}
+.verdict li>span:first-child{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--navy);padding-top:3px;white-space:nowrap}
+.note{border-left:4px solid var(--amber);background:var(--soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid2>*{min-width:0}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h4{margin-top:0}
+.table-wrap{overflow-x:auto;margin:10px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:640px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.02em;text-transform:uppercase}
+td.n{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+code{font-family:var(--mono);font-size:.86em;background:var(--code);padding:1px 6px;border-radius:5px;overflow-wrap:anywhere}
+.pill{display:inline-block;font-weight:700;font-size:12px;padding:3px 10px;border-radius:20px;white-space:nowrap;letter-spacing:.02em}
+.pill.p1{background:var(--p1-bg);color:var(--p1)}.pill.p2{background:var(--p2-bg);color:var(--p2)}.pill.p3{background:var(--p3-bg);color:var(--p3)}.pill.ok{background:var(--good-bg);color:var(--good)}
+.keep li::marker{color:var(--good)}
+.change{counter-reset:c;list-style:none;padding:0;margin:8px 0;display:grid;gap:12px}
+.change li{counter-increment:c;display:grid;grid-template-columns:34px 1fr;gap:10px}
+.change li:before{content:counter(c);font-family:var(--mono);font-weight:500;font-size:14px;color:var(--navy);background:var(--soft);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;margin-top:1px}
+.change li>div{min-width:0}
+.seq{display:grid;gap:12px;margin:10px 0}
+.mail{border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
+.mail-h{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--soft);border-bottom:1px solid var(--line)}
+.mail-h .day{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.mail-h .subj{font-weight:600;font-size:15px;overflow-wrap:anywhere}
+.mail pre{margin:0;padding:14px 16px;font-family:var(--mono);font-size:14px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);background:var(--paper)}
+button.copy{font:600 13px var(--body);color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 12px;cursor:pointer}
+button.copy:hover{border-color:var(--navy)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.tabs button{font:600 14.5px var(--body);color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--paper);background:var(--navy);border-color:var(--navy)}
+.week{border-left:3px solid var(--navy);padding-left:16px;margin:18px 0}
+.week h3{margin-top:0}
+.chk{list-style:none;padding:0;margin:8px 0}
+.chk li{position:relative;padding-left:30px;margin-bottom:7px}
+.chk li:before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border:2px solid var(--line);border-radius:4px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:12px 0}
+.stat{background:var(--soft);border-radius:12px;padding:14px 16px}
+.stat strong{display:block;font-size:24px;color:var(--navy);line-height:1.15;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--muted)}
+footer{padding-block:6px 40px;color:var(--muted);font-size:14px}
+@media (max-width:760px){section{padding:20px 16px}nav.toc ol{columns:1}.grid2{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="top">
+ <h1>Site review &amp; outreach kit</h1>
+ <p class="lede">Feedback on the 7 October growth plan, a review of every page on automationfunda.com, and a ready-to-send cold email kit for winning the first clients in the US and UK.</p>
+ <p class="meta">Reviewed 18 November 2026 &middot; 38 URLs crawled (20 pages, 11 posts, categories, broken links) &middot; Companion to the growth plan</p>
+</header>
+
+<nav class="toc" aria-label="Contents"><b>Contents</b><ol>
+ <li><a href="#short">The short version</a></li>
+ <li><a href="#plan">The growth plan: keep and change</a></li>
+ <li><a href="#working">What the site gets right</a></li>
+ <li><a href="#fixes">Website fix list</a></li>
+ <li><a href="#pages">Page by page</a></li>
+ <li><a href="#where">Who to email, and where</a></li>
+ <li><a href="#timing">Timing and numbers</a></li>
+ <li><a href="#sequences">Email sequences</a></li>
+ <li><a href="#setup">Setup and compliance</a></li>
+ <li><a href="#next">The next 14 days</a></li>
+ <li><a href="#unchecked">What I couldn't check</a></li>
+</ol></nav>
+
+<section id="short">
+ <h2>The short version</h2>
+ <ul class="verdict">
+  <li><span>PLAN</span><div><strong>The strategy is sound, but the work is behind schedule.</strong> Channel order, niche and targets are right. Six weeks in, none of the plan's website tasks for weeks 1&ndash;6 are live: there are still 3 niche articles, no lead magnet, no schema, and the off-topic posts are still up with broken links.</div></li>
+  <li><span>SITE</span><div><strong>The site is fast, secure and full of real proof, but its structure works against you.</strong> Case studies can't be linked one at a time. Nothing captures an email. Pages don't link to each other. 8 of 11 blog posts pull away from your niche.</div></li>
+  <li><span>EMAIL</span><div><strong>Go US first, one industry at a time.</strong> Start with campgrounds and landscapers. Both are in their off-season now, which is when owners fix their systems. Before the first send, give each industry a page to land on.</div></li>
+  <li><span>TRUST</span><div><strong>Settle the numbers before a prospect finds two versions.</strong> The site says 95% JSS, 1,766 hours, 50+ projects. "My Upwork profile.txt" says 100% JSS, 9,700+ hours, 100 projects, and leads with Power BI. It matches Kazi Safayet's bio. If it is his profile, the site is under-selling the team. If it is Farhad's, one set of numbers is wrong.</div></li>
+ </ul>
+</section>
+
+<section id="plan">
+ <h2>The growth plan: keep and change</h2>
+ <div class="grid2">
+  <div class="card">
+   <h4 style="color:var(--good)">Keep</h4>
+   <ul class="tight keep">
+    <li>Upwork, past clients and LinkedIn first; SEO as a slow investment. Right for a new domain.</li>
+    <li>Owning Google Workspace and Apps Script instead of "AI automation".</li>
+    <li>Fast replies to leads, and audit calls that say what isn't worth automating.</li>
+    <li>No bought links. Prices on the site.</li>
+    <li>Honest 90-day targets that expect Upwork to pay the bills at first.</li>
+   </ul>
+  </div>
+  <div class="card">
+   <h4>Change</h4>
+   <p style="margin:0">Eight changes, listed below. The biggest: cut scope to what three people can run, and build industry landing pages before cold email starts.</p>
+  </div>
+ </div>
+ <ol class="change">
+  <li><div><strong>Cut the plan to what three people can run.</strong> The hours don't add up. Nine LinkedIn posts a week (three people &times; three) won't fit in 3&ndash;4 hours, and neither will hand-researching 100 prospects inside a 3-hour cold email slot. Give each channel one owner and one weekly number. For example: Farhad on Upwork, calls and proposals; Harun on the cold email system and LinkedIn; Safayet on dashboard content and BI work.</div></li>
+  <li><div><strong>Build industry pages and single case-study pages before cold email.</strong> The plan sends cold prospects to the general homepage. A campground owner should land on a page about campground booking automation with the KOA story on it, and Email 2 needs a real link to that story.</div></li>
+  <li><div><strong>Tighten the Europe legal note.</strong> "UK/EU B2B rules" is not one rule. The US and UK limited companies allow cold email with an opt-out. Several EU countries, including Germany, Austria and Denmark, need prior consent even for B2B email. Use LinkedIn there. Details are under <a href="#where">Who to email</a>.</div></li>
+  <li><div><strong>Keep past-client outreach inside Upwork.</strong> Upwork's terms bar taking clients you met there off-platform for 24 months unless you pay the conversion fee. Send the 35 past-client messages through Upwork and route new work through it. Losing that account would cost more than every other channel in the plan earns.</div></li>
+  <li><div><strong>Drop "FAQ schema to win extra space in search results".</strong> Since August 2023, Google has shown FAQ rich results only for well-known government and health sites. Article, Person and Service markup are better uses of that hour.</div></li>
+  <li><div><strong>Fix measurement before reading the numbers.</strong> The cookie banner applies EU opt-in to every visitor, so GA4 only counts people who click Accept, US visitors included. Add Cloudflare Web Analytics, which is cookieless, free and already on your host. Keep the <code>/api/lead</code> sheet as the source of truth for leads.</div></li>
+  <li><div><strong>Pick one front door.</strong> The Upwork profile leads with Power BI. The site leads with Google Workspace but has 10 service pages. The blog is mostly AI voice agents and GoHighLevel. A buyer who sees two of these sees two different companies.</div></li>
+  <li><div><strong>Price for the market you're emailing.</strong> "From $299" works as an Upwork entry point. For US cold outreach, quote after the audit instead of leading with price. A US agency would price a build like the three-phase KOA system in the low thousands. A top tier of "from $999" sets an anchor that is hard to move later.</div></li>
+ </ol>
+</section>
+
+<section id="working">
+ <h2>What the site gets right</h2>
+ <p class="sub">Checked across all 38 URLs, not sampled.</p>
+ <div class="table-wrap"><table>
+  <thead><tr><th>Area</th><th>What I found</th></tr></thead>
+  <tbody>
+   <tr><td><span class="pill ok">Speed</span></td><td>0.3&ndash;0.9 s server response through Cloudflare. About 620 KB of images on the homepage, all WebP or SVG with width and height set.</td></tr>
+   <tr><td><span class="pill ok">Security</span></td><td>HTTPS, HSTS, a strict Content-Security-Policy and permissions policy. www and http both redirect to the bare domain.</td></tr>
+   <tr><td><span class="pill ok">SEO basics</span></td><td>One H1 per page. Unique titles and descriptions on every core page. Correct canonical tags. Alt text on every image. A custom 404.</td></tr>
+   <tr><td><span class="pill ok">Proof</span></td><td>14 case studies with real numbers (1,013 barcodes, 13,616 leads, 90% of emails). Named reviews with company names. Published prices. A 56-second intro video.</td></tr>
+   <tr><td><span class="pill ok">Conversion</span></td><td>A two-step audit form that hands off to Cal.com with details pre-filled. <code>/api/lead</code> and <code>/api/booked</code> are both live.</td></tr>
+   <tr><td><span class="pill ok">Honesty</span></td><td>The Upwork-name note (Md Ramjan A.) is clear. The FAQ answers time zones directly. Analytics only fires after consent.</td></tr>
+   <tr><td><span class="pill ok">Content</span></td><td>The three Apps Script articles have real, working code, and the Gmail quotas they quote (100 a day free, 1,500 on Workspace) are correct.</td></tr>
+  </tbody>
+ </table></div>
+</section>
+
+<section id="fixes">
+ <h2>Website fix list</h2>
+ <p class="sub"><span class="pill p1">P1</span> this week &middot; <span class="pill p2">P2</span> this month &middot; <span class="pill p3">P3</span> polish</p>
+ <div class="table-wrap"><table>
+  <thead><tr><th></th><th>Issue</th><th>Where</th><th>Fix</th></tr></thead>
+  <tbody>
+   <tr><td><span class="pill p1">P1</span></td><td><strong>Broken internal links (404)</strong></td><td><code>/services/.html</code> 9&times; in the WhatsApp CRM post; <code>/contact/.html</code> in the AaaS post</td><td>Point them to <code>/services/</code> and <code>/get-started/</code>, or retire the posts (row 6).</td></tr>
+   <tr><td><span class="pill p1">P1</span></td><td><strong>The Services hub is orphaned</strong></td><td>No page links to <code>/services/</code>. The "Services" menu label opens a dropdown but isn't a link.</td><td>Make the label link to <code>/services/</code> and add it to the footer.</td></tr>
+   <tr><td><span class="pill p1">P1</span></td><td><strong>Case studies can't be linked one at a time</strong></td><td>All 14 on <code>/case-studies/</code> with no anchors or separate URLs</td><td>Give the top five their own pages (e.g. <code>/case-studies/fairbanks-koa-booking-automation/</code>). Today, at least add an <code>id</code> anchor to each.</td></tr>
+   <tr><td><span class="pill p1">P1</span></td><td><strong>Nothing captures an email</strong></td><td>The only forms are Contact and the audit</td><td>Offer the invoice-emailer as a "Make a copy" template in exchange for an email, at the end of each article and on the Sheets page.</td></tr>
+   <tr><td><span class="pill p1">P1</span></td><td><strong>Pages don't link to each other</strong></td><td>Service pages link only to the audit form. The case-study page links nowhere. The Apps Script articles never link to the Sheets service page or the KOA story.</td><td>Each service page: two matching case studies and one article. Each article: its service page and case study.</td></tr>
+   <tr><td><span class="pill p1">P1</span></td><td><strong>8 of 11 blog posts work against the niche</strong></td><td>AaaS, WhatsApp CRM, Custom GPT, GoHighLevel SaaS mode, Exotel/Hindi voice agent, voice receptionist, Playwright scraper, "AI vs software engineering"</td><td>They read as generic AI content. One targets India's phone market and one targets job seekers. Keep the Playwright + Sheets post, and the receptionist if it is Harun's real dental-clinic build. Noindex or 301 the rest to the closest service page.</td></tr>
+   <tr><td><span class="pill p2">P2</span></td><td><strong>Structured data on 4 of 34 live pages</strong></td><td>Only the homepage, blog index and two categories have JSON-LD</td><td>Article on posts. Person on About with <code>alternateName: "Md Ramjan Ali Farhad"</code>, which ties both names together for Google. Service on service pages. BreadcrumbList.</td></tr>
+   <tr><td><span class="pill p2">P2</span></td><td><strong>The homepage says everything twice</strong></td><td>2,630 words. Upwork stats 3&times;, the Upwork-name note 2&times;, two review blocks, two service overviews, six audit buttons.</td><td>Cut about 30%: one services block, one reviews block, one stats strip. Keep the name note in the reviews block only.</td></tr>
+   <tr><td><span class="pill p2">P2</span></td><td><strong>Terms name no business</strong></td><td><code>/terms-of-service/</code></td><td>No legal entity, address or governing law. Add them, and have a one-page data processing agreement (DPA) ready, because EU clients will ask.</td></tr>
+   <tr><td><span class="pill p2">P2</span></td><td><strong>Cookie banner treats everyone as EU, and its consent log fails</strong></td><td>Complianz posts proof of consent to <code>/wp-json/complianz/v1/</code>, which returns 404 on the static host</td><td>Set the banner by region (opt-in for EU/UK, a notice elsewhere) or switch to a banner that works on static hosting. Add Cloudflare Web Analytics.</td></tr>
+   <tr><td><span class="pill p2">P2</span></td><td><strong>Missing or placeholder meta descriptions</strong></td><td><code>/blog/</code>, both categories and <code>/blog/page/2/</code> have none. Privacy's reads "Last updated: 4 October 2026". Cookie's reads "Cookie Policy".</td><td>Write one sentence for each.</td></tr>
+   <tr><td><span class="pill p2">P2</span></td><td><strong>Old posts' structure and dates</strong></td><td>An H2 repeats the H1. The Custom GPT post jumps from H1 to H3. All 11 posts are dated 4&ndash;5 Oct 2026.</td><td>Fix while deciding which posts to keep (row 6).</td></tr>
+   <tr><td><span class="pill p3">P3</span></td><td><strong>A 57-tool wall</strong></td><td>Includes Proxmox, Linux, SQLite and Docker. 9 tiles show a letter instead of a logo (Keap, Softr, D-Tools, DeepSeek, Klipfolio, Power BI, Excel, Apify, SamCart).</td><td>Trim to about 20 tools a business owner would recognise.</td></tr>
+   <tr><td><span class="pill p3">P3</span></td><td><strong>Temporary redirects</strong></td><td>Missing-slash URLs redirect with 307. <code>http://www</code> takes two hops.</td><td>Use 301 or 308, and redirect in a single hop.</td></tr>
+   <tr><td><span class="pill p3">P3</span></td><td><strong>Two CTA labels</strong></td><td>The header says "Get Started!"; every other button says "Book a Free Workflow Audit"</td><td>Use one label everywhere.</td></tr>
+   <tr><td><span class="pill p3">P3</span></td><td><strong>Phone contact for US/UK buyers</strong></td><td>The header's first contact item is a +880 WhatsApp number</td><td>Being in Bangladesh isn't the problem, so say it plainly on About. A US or UK virtual number on the contact page helps buyers who won't dial abroad.</td></tr>
+   <tr><td><span class="pill p3">P3</span></td><td><strong>FAQ heading</strong></td><td>"FAQ's &ndash; Frequently Asked Questions" and "FAQ's" in the menu</td><td>"FAQs" takes no apostrophe.</td></tr>
+  </tbody>
+ </table></div>
+</section>
+
+<section id="pages">
+ <h2>Page by page</h2>
+ <div class="table-wrap"><table>
+  <thead><tr><th>Page</th><th>Words</th><th>Verdict</th><th>Main fix</th></tr></thead>
+  <tbody>
+   <tr><td>Home</td><td class="n">2,630</td><td>Strong, specific copy with a clear offer and real proof</td><td>Cut the repetition. Link the hero proof to the KOA case-study page.</td></tr>
+   <tr><td>Case Studies</td><td class="n">2,155</td><td>The best page on the site. Concrete problems and numbers.</td><td>Split into single pages, and link each one to its service page.</td></tr>
+   <tr><td>About</td><td class="n">1,161</td><td>Good team section with an honest name explanation</td><td>Person schema. Say where the team is based, plainly.</td></tr>
+   <tr><td>Get Started</td><td class="n">691</td><td>A clean two-step form into the calendar, with reviews beside it</td><td>Keep as is.</td></tr>
+   <tr><td>Contact</td><td class="n">549</td><td>Fine. Hours are listed as UTC+6 with US/EU overlap.</td><td>Add a business address once Terms has one.</td></tr>
+   <tr><td>FAQ</td><td class="n">777</td><td>Useful, direct answers</td><td>Fix the "FAQ's" heading.</td></tr>
+   <tr><td>Services hub</td><td class="n">772</td><td>Good overview, but nothing links to it</td><td>Link it from the menu label and the footer.</td></tr>
+   <tr><td>10 service pages</td><td class="n">~1,000 each</td><td>About 60% unique. The pricing and why-us blocks repeat, which is fine. Google Sheets is the strongest.</td><td>Add one matching case study and one article link per page, plus Service schema.</td></tr>
+   <tr><td>3 Apps Script articles</td><td class="n">1,190&ndash;1,305</td><td>Real code, accurate limits and a soft CTA. The model for future posts.</td><td>Link each to the Sheets page and KOA story, and add the template download.</td></tr>
+   <tr><td>8 older posts</td><td class="n">1,030&ndash;7,465</td><td>Off-niche and generic in tone, two with broken links</td><td>Keep two, retire six (fix list row 6).</td></tr>
+   <tr><td>Blog index, categories</td><td class="n">490&ndash;1,355</td><td>Work, but have no meta descriptions</td><td>Write descriptions.</td></tr>
+   <tr><td>Terms, Privacy, Cookies</td><td class="n">790&ndash;1,220</td><td>Clear and plain</td><td>Terms needs entity, address and governing law.</td></tr>
+  </tbody>
+ </table></div>
+</section>
+
+<section id="where">
+ <h2>Who to email, and where</h2>
+ <p class="sub">Choose the market for legal reasons first, then the industry for proof.</p>
+ <h3>Markets</h3>
+ <div class="table-wrap"><table>
+  <thead><tr><th>Market</th><th>Cold email?</th><th>What it takes</th></tr></thead>
+  <tbody>
+   <tr><td><strong>United States</strong></td><td><span class="pill ok">Start here</span></td><td>CAN-SPAM: honest sender and subject, a physical postal address, and an opt-out honoured within 10 business days.</td></tr>
+   <tr><td><strong>United Kingdom</strong></td><td><span class="pill p2">Limited companies only</span></td><td>PECR allows B2B cold email to companies if each email has an opt-out. Sole traders and partnerships count as individuals and need consent first.</td></tr>
+   <tr><td><strong>Rest of Europe</strong></td><td><span class="pill p3">Country by country</span></td><td>Rules differ. Several countries, including Germany, Austria and Denmark, need prior consent even for B2B email, so use LinkedIn there. Where cold email is allowed, GDPR also means stating where you got the person's details.</td></tr>
+  </tbody>
+ </table></div>
+ <p class="sub">General guidance, not legal advice. Check a country's rules before you scale past a pilot there.</p>
+
+ <h3>Industries, in order</h3>
+ <div class="table-wrap"><table>
+  <thead><tr><th>Industry</th><th>Proof you already have</th><th>Why now</th><th>Where to find them</th></tr></thead>
+  <tbody>
+   <tr><td><strong>1. US campgrounds and RV parks</strong> with group bookings, cabins or tours</td><td>Fairbanks KOA: about 90% of booking emails automated, no double-booked buses, named review from Lydia Fodor</td><td>Off-season. Owners plan and fix systems between November and March.</td><td>ARVC's park directory, KOA's location list (franchise owners), state campground associations, Google Maps</td></tr>
+   <tr><td><strong>2. US landscaping and home services</strong>, 10&ndash;50 staff with sales reps on commission</td><td>Texas estimator: won-job logging went from about 20 minutes to instant, and low-margin jobs are flagged before booking</td><td>Winter slowdown. Spring pricing gets set now.</td><td>NALP and state landscape association members, Google Maps, LinkedIn (owner, ops manager)</td></tr>
+   <tr><td><strong>3. US/UK AV and security integrators</strong> using D-Tools</td><td>Moon Security: price book reconciled across hundreds of products, named review from Zac Nock</td><td>Every out-of-date price-book line is margin lost on a quote</td><td>CEDIA's find-a-pro directory, D-Tools user groups, LinkedIn</td></tr>
+   <tr><td><strong>4. UK/EU short-term rental managers</strong> (LinkedIn first)</td><td>Property manager: owner reports generated and sent automatically, revenue booked to the right month</td><td>Year-end owner statements</td><td>LinkedIn, local rental-management associations</td></tr>
+  </tbody>
+ </table></div>
+</section>
+
+<section id="timing">
+ <h2>Timing and numbers</h2>
+ <h3>Calendar from today</h3>
+ <div class="table-wrap"><table>
+  <thead><tr><th>Dates</th><th>What happens</th></tr></thead>
+  <tbody>
+   <tr><td class="n">18&ndash;24 Nov</td><td>Buy two sending domains with two inboxes each and start warm-up, unless it has been running since October. Build the campground page and the KOA case-study page. Record the 2-minute walkthrough. Build and verify the first 150 campgrounds.</td></tr>
+   <tr><td class="n">25&ndash;30 Nov</td><td>Thanksgiving (Thu 26 Nov) and Black Friday to Cyber Monday flood inboxes. Don't send. Keep warming domains and building lists, including 150 landscapers.</td></tr>
+   <tr><td class="n">1&ndash;18 Dec</td><td>Pilot: 300 prospects across the two industries, 20 a day per inbox. If warm-up only started on 18 Nov, it has had about two weeks by now, which is just enough for a small pilot. Read every reply yourself.</td></tr>
+   <tr><td class="n">21 Dec &ndash; 4 Jan</td><td>Holiday pause. Answer replies only.</td></tr>
+   <tr><td class="n">5 Jan &ndash; 27 Feb</td><td>Main campaign. The industry with the better pilot reply rate gets most of the volume. Add AV integrators.</td></tr>
+  </tbody>
+ </table></div>
+
+ <h3>What "a few clients" takes</h3>
+ <div class="stats">
+  <div class="stat"><strong>~100/day</strong><span>4 inboxes &times; 25 sends</span></div>
+  <div class="stat"><strong>~500/month</strong><span>new prospects with a 4-email sequence</span></div>
+  <div class="stat"><strong>25 &rarr; 10 &rarr; 6</strong><span>replies, interested, calls per 500 prospects</span></div>
+  <div class="stat"><strong>1&ndash;2</strong><span>clients per 500 prospects</span></div>
+ </div>
+ <p>These assume a 5% reply rate, 40% of replies interested, 60% of those booking, and 25&ndash;30% closing. They are planning numbers, not promises. A tight list beats them and a loose one halves them. Expect <strong>2&ndash;4 clients from the first 1,000 prospects</strong>, and use the pilot to replace these assumptions with your own rates.</p>
+</section>
+
+<section id="sequences">
+ <h2>Email sequences</h2>
+ <p class="sub">Plain text, under 100 words, and no link in Email 1. Replace every <code>{{&hellip;}}</code>. The personal first line has to be real, because it decides whether the email is read.</p>
+ <div class="tabs" role="tablist" aria-label="Industry">
+  <button role="tab" id="tab-camp" aria-selected="true" aria-controls="panel-camp">Campgrounds</button>
+  <button role="tab" id="tab-land" aria-selected="false" aria-controls="panel-land">Landscaping</button>
+  <button role="tab" id="tab-av" aria-selected="false" aria-controls="panel-av">AV integrators</button>
+  <button role="tab" id="tab-reply" aria-selected="false" aria-controls="panel-reply">Replies &amp; footer</button>
+ </div>
+
+ <div id="panel-camp" role="tabpanel" aria-labelledby="tab-camp" class="seq">
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 1 &middot; Day 1</div><div class="subj">group bookings at {{Park}}</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+{{One real line about their park, e.g. "Saw that you run guided caravan groups every summer."}}
+
+Last season we built a booking system for Fairbanks KOA in Alaska. It checks bus availability, sends the PDF invoice, emails the tour vendors and chases deposits. About 90% of those emails now go out on their own, and buses can't be double-booked.
+
+Is that still done by hand at {{Park}}? The off-season is usually when owners have time to fix it.
+
+Farhad
+AutomationFunda</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 2 &middot; Day 4</div><div class="subj">re: group bookings at {{Park}}</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+A quick picture of how the KOA system works:
+- A web form checks the calendar and holds the slot
+- Staff approve, and the invoice and vendor emails go out
+- A daily run sends 10+ reminders, from deposit to arrival pack
+
+It runs inside their own Google account, so there's no new software to pay for.
+
+I recorded a 2-minute walkthrough. Want me to send it?
+
+Farhad</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 3 &middot; Day 9</div><div class="subj">a 30-minute look before the season</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+If it helps, I'll spend 30 minutes on a call looking at how bookings move through {{Park}} today, then email you a fixed price before the season starts. If something isn't worth automating, I'll tell you.
+
+The full KOA write-up is here: {{KOA case study link}}
+
+Farhad</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 4 &middot; Day 16</div><div class="subj">closing the loop</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+I'll leave it here. If booking admin becomes a priority before the season, reply to this email and I'll pick it up.
+
+Good luck with the season ahead.
+
+Farhad</pre></div>
+ </div>
+
+ <div id="panel-land" role="tabpanel" aria-labelledby="tab-land" class="seq" hidden>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 1 &middot; Day 1</div><div class="subj">quotes at {{Company}}</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+{{One real line, e.g. "Noticed you run design-build and maintenance crews across {{City}}."}}
+
+We built an estimating system in Google Sheets for a landscaping company in Texas. Every rep quotes from the same locked price list, a margin meter turns red before a low-margin job is booked, and logging a won job with its commission went from about 20 minutes to one click.
+
+Does your team still quote from their own copies of the price sheet?
+
+Farhad
+AutomationFunda</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 2 &middot; Day 4</div><div class="subj">re: quotes at {{Company}}</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+The part owners usually like most: commission is calculated on real gross profit, not on the quote total, and a PDF snapshot of every won job is filed in Drive automatically.
+
+It runs in Google Sheets, with a mobile version for quoting on site.
+
+Want the 2-minute walkthrough?
+
+Farhad</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 3 &middot; Day 9</div><div class="subj">before spring pricing</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+Winter is usually when pricing for the season gets set. If it's useful, I'll do a free 30-minute review of how {{Company}} quotes today and send a fixed price for fixing it. If it's not worth it, I'll say so.
+
+Write-up: {{Landscaping case study link}}
+
+Farhad</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 4 &middot; Day 16</div><div class="subj">closing the loop</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+I'll stop here. If quoting or commissions start eating time again in spring, reply and I'll pick it up.
+
+Farhad</pre></div>
+ </div>
+
+ <div id="panel-av" role="tabpanel" aria-labelledby="tab-av" class="seq" hidden>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 1 &middot; Day 1</div><div class="subj">{{Company}}'s D-Tools price book</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+{{One real line about their company.}}
+
+We recently reconciled Moon Security's D-Tools Cloud price book against current manufacturer pricing, across hundreds of products, and flagged every line that had drifted. Their quotes now go out on current numbers.
+
+How do you keep {{Company}}'s price book in line with vendor price changes today?
+
+Farhad
+AutomationFunda</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 2 &middot; Day 4</div><div class="subj">re: price book</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+Zac Nock at Moon Security wrote afterwards: "The project involved reviewing hundreds of products, identifying discrepancies, and ensuring our catalog matched current manufacturer pricing... he completed the work accurately, and delivered everything on time."
+
+The same check can run each time a vendor sends a new price list. Worth a look?
+
+Farhad</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 3 &middot; Day 9</div><div class="subj">one-off or ongoing</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+This usually goes one of two ways: a one-off clean-up of the price book, or a monthly check that flags drift before a quote goes out. I'm happy to do a free 30-minute call and send a fixed price for either.
+
+Farhad</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Email 4 &middot; Day 16</div><div class="subj">closing the loop</div></div><button class="copy" type="button">Copy</button></div><pre>Hi {{FirstName}},
+
+I'll leave it here. If price-book drift starts showing up in your margins, reply and I'll pick it up.
+
+Farhad</pre></div>
+ </div>
+
+ <div id="panel-reply" role="tabpanel" aria-labelledby="tab-reply" class="seq" hidden>
+  <div class="mail"><div class="mail-h"><div><div class="day">Footer &middot; every cold email</div><div class="subj">Required in the US and UK</div></div><button class="copy" type="button">Copy</button></div><pre>AutomationFunda &middot; {{registered postal address}}
+You're getting this because {{Company}} is listed in {{source}}. Reply "no thanks" and I won't email you again.</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Reply &middot; "Yes, send it"</div><div class="subj">Send within the hour</div></div><button class="copy" type="button">Copy</button></div><pre>Here it is: {{walkthrough link}}
+
+If you'd like, pick any 30-minute slot here and I'll look at how {{Company}} handles it today: {{audit link}}?utm_source=coldemail</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Reply &middot; "How much?"</div><div class="subj">Give a range, then the next step</div></div><button class="copy" type="button">Copy</button></div><pre>Single fixes start at $299 and connected systems at $599. Something like the KOA build is more. I give a fixed number after a 30-minute look, so you're not paying for guesswork: {{audit link}}</pre></div>
+  <div class="mail"><div class="mail-h"><div><div class="day">Reply &middot; "Not now"</div><div class="subj">Ask permission to follow up</div></div><button class="copy" type="button">Copy</button></div><pre>Understood, thanks for letting me know. Mind if I check back in {{month}}?</pre></div>
+  <p class="sub" style="margin:4px 0 0">Unsubscribe or "no": remove the address from every list the same day.</p>
+ </div>
+</section>
+
+<section id="setup">
+ <h2>Setup and compliance</h2>
+ <div class="grid2">
+  <div class="card">
+   <h4>Sending setup</h4>
+   <ul class="chk">
+    <li>Two sending domains that are variations of your name, never the main domain. Two Google Workspace inboxes on each.</li>
+    <li>SPF, DKIM and DMARC on every domain. Warm up for at least 14 days.</li>
+    <li>A sending tool with warm-up and reply detection, such as Instantly or Smartlead (about $40/month).</li>
+    <li>Verify every address first with MillionVerifier, NeverBounce or ZeroBounce. Keep bounces under 2% and spam complaints under 0.3%.</li>
+    <li>Plain text, no images, no open-tracking pixel, no link in Email 1.</li>
+   </ul>
+  </div>
+  <div class="card">
+   <h4>Build before the first send</h4>
+   <ul class="chk">
+    <li>A campground landing page with the KOA story, what you automate for parks, a price range and the audit form.</li>
+    <li>The KOA case study on its own URL.</li>
+    <li>A 2-minute walkthrough video of the KOA system, recorded with the client's permission or on demo data.</li>
+    <li>A registered postal address for the footer.</li>
+    <li>The same page, case study and video for landscaping before its sequence starts.</li>
+   </ul>
+  </div>
+ </div>
+ <div class="note"><strong>Keep the two lists separate.</strong> Cold prospects go in the sending tool. Only people who download the template or book an audit join the newsletter list. Mixing them is the fastest way to ruin the newsletter's sender reputation.</div>
+</section>
+
+<section id="next">
+ <h2>The next 14 days</h2>
+ <div class="week">
+  <h3>Week of 18 November</h3>
+  <ul class="chk">
+   <li>Settle the Upwork numbers so the site, plan and profile all match</li>
+   <li>Fix the 10 broken links and make the Services menu label a link</li>
+   <li>Add <code>id</code> anchors to all 14 case studies</li>
+   <li>Start domain warm-up, if it isn't already running</li>
+   <li>Noindex or redirect the six off-niche posts</li>
+   <li>Message the 35 past clients, through Upwork</li>
+  </ul>
+ </div>
+ <div class="week">
+  <h3>Week of 25 November</h3>
+  <ul class="chk">
+   <li>Publish the KOA case-study page and the campground landing page</li>
+   <li>Record the walkthrough video</li>
+   <li>Build and verify 150 campgrounds and 150 landscapers</li>
+   <li>Add Cloudflare Web Analytics</li>
+   <li>Put the invoice template download on the three Apps Script articles</li>
+  </ul>
+ </div>
+ <div class="week">
+  <h3>Tuesday 1 December</h3>
+  <ul class="chk"><li>Pilot starts: 20 sends a day per inbox</li></ul>
+ </div>
+</section>
+
+<section id="unchecked">
+ <h2>What I couldn't check</h2>
+ <ul class="tight">
+  <li><strong>Visual layout and mobile rendering.</strong> I read the HTML of every page but didn't render pages or run Lighthouse.</li>
+  <li><strong>Form submission end to end.</strong> <code>/api/lead</code> and <code>/api/booked</code> respond, but I didn't submit, so no test lead reached your sheet.</li>
+  <li><strong>Google indexing.</strong> Search Console shows this.</li>
+  <li><strong>Off-site plan work and two referenced files.</strong> I couldn't see the Upwork rate, LinkedIn or domain warm-up. <code>automationfunda-outreach-links.html</code> and <code>Cold_Email_Domain_Setup_Guide.md</code> are not in this folder.</li>
+ </ul>
+</section>
+
+<footer>Prepared 18 November 2026 &middot; Based on a full crawl of automationfunda.com, the 7 October growth plan and "My Upwork profile.txt".</footer>
+</div>
+
+<script>
+(function(){
+ var tabs=[].slice.call(document.querySelectorAll('.tabs [role="tab"]'));
+ function show(t){
+  tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on?'true':'false');b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on;});
+  try{localStorage.setItem('af-tab',t.id);}catch(e){}
+ }
+ tabs.forEach(function(b,i){
+  b.addEventListener('click',function(){show(b);});
+  b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!k)return;var n=tabs[(i+k+tabs.length)%tabs.length];n.focus();show(n);});
+ });
+ try{var saved=localStorage.getItem('af-tab');var s=saved&&document.getElementById(saved);if(s)show(s);}catch(e){}
+ document.querySelectorAll('button.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+   var mail=btn.closest('.mail');var pre=mail.querySelector('pre');var subj=mail.querySelector('.subj');
+   var text=(subj&&mail.querySelector('.day').textContent.indexOf('Email')===0?'Subject: '+subj.textContent+'\n\n':'')+pre.textContent;
+   function done(label){btn.textContent=label;setTimeout(function(){btn.textContent='Copy';},1600);}
+   function fallback(){var r=document.createRange();r.selectNodeContents(pre);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);done('Selected');}
+   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){done('Copied');},fallback);}else{fallback();}
+  });
+ });
+})();
+</script>
+</body>
+</html>

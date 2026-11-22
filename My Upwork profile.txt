@@ -1,0 +1,41 @@
+Title: Microsoft Certified Power BI Developer | SQL | DAX | Fabric | Klipfolio
+
+🥇 Data Analyst | Power BI Developer | Automation Expert (Google Apps Script, Make.com, n8n)
+💡 Visualizing growth. Simplifying workflows. Predicting trends.
+🏆 200+ Dashboards Delivered | 100+ Happy Clients Globally
+
+🏅 Microsoft Certified: Power BI Data Analyst (PL-300) | Data Analyst | Automation Expert
+💡 Visualizing growth. Simplifying workflows. Predicting trends.
+🏆 100% Job Success | 9,700+ hours | 100 projects delivered
+
+I design and deliver end-to-end Business Intelligence solutions that blend data storytelling with workflow automation and predictive analytics. 6+ years focused on BI and analytics, 10+ years working with international clients.
+
+I help businesses visualize performance, automate operations, and make smarter decisions faster.
+
+💼 What I Do
+✅ Business Intelligence
+1. Power BI dashboards with custom DAX, M, and Python integrations
+2. Microsoft Fabric solutions (Lakehouse, Dataflows Gen2, Notebooks)
+3. Semantic and data model design built for speed, accuracy, and easy maintenance
+4. Time series forecasting, linear regression, and predictive modeling
+
+✅ Workflow Automation
+1. Google Apps Script automation for Gmail, Sheets, Slack, and APIs
+2. Make, n8n, and Zapier workflow builds
+3. AI-assisted automation using OpenAI and Google Gemini APIs
+4. Power Automate and VBA to streamline reporting
+
+✅ Data Engineering & APIs
+1. REST API integrations into Power BI or Google Sheets (scheduled imports and transformations)
+2. ETL pipelines using SQL, Python, Dataflows Gen2, and Azure Data Factory
+3. Integrations with Salesforce, HubSpot, QuickBooks, Google Ads, and Shopify
+
+🧠 Tech Stack
+Cloud: Power BI, Microsoft Fabric, Azure, Google Cloud
+Databases: MS SQL, PostgreSQL, MySQL, BigQuery
+Automation: Make, n8n, Zapier, Power Automate, Google Apps Script
+Languages: SQL, Python, DAX, M
+
+Not sure if I am the right fit? I offer a free 30-minute consultation, no obligation.
+
+Let's connect and turn your data into action. 🚀
